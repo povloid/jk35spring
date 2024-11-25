@@ -40,6 +40,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>k35.tools</groupId>
+			<artifactId>sql</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
