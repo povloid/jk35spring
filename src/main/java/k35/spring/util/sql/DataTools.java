@@ -10,6 +10,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.lang.Nullable;
 
+import k35.sql.util.convertors.Transform.TransformFunction;
+
 public final class DataTools {
 
 	/**
@@ -17,11 +19,6 @@ public final class DataTools {
 	 */
 	private DataTools() {
 
-	}
-
-	@FunctionalInterface
-	public static interface TransformFunction<T> {
-		T apply(ResultSet rs) throws SQLException;
 	}
 
 	@FunctionalInterface
