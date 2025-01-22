@@ -10,6 +10,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.lang.Nullable;
 
+import k35.sql.util.convertors.Transform;
+import k35.sql.util.convertors.Transform.ExtractFunction;
 import k35.sql.util.convertors.Transform.TransformFunction;
 
 public final class DataTools {
@@ -74,6 +76,17 @@ public final class DataTools {
 	 */
 	public static <T> RowMapper<T> createRowMapperFor(final TransformFunction<T> transform) {
 		return new RowMapperFor<>(transform);
+	}
+
+	/**
+	 * Создать преобразователь записи
+	 * 
+	 * @param <T>
+	 * @param extractFunction
+	 * @return
+	 */
+	public static <T> RowMapper<T> createRowMapperFor(final ExtractFunction<T> extractFunction) {
+		return new RowMapperFor<>(Transform.of(extractFunction));
 	}
 
 }
